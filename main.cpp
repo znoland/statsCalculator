@@ -65,5 +65,28 @@ int greatestCommonDivisor(vector<int> nums)
 bool isSorted(vector<int> nums)
 {
     // TODO: Student 4
-    return false;
+    bool numsIsSorted = true;
+
+    for(int i = 0; i < nums.size() - 1; i++) //checks if vector is sorted least to most
+    {
+        if(i > i + 1) 
+        {
+            numsIsSorted = false;
+            break;
+        }
+    }
+
+    if(numsIsSorted == false)
+    {
+        for(int i = 0; i < nums.size() - 1; i++) //checks if vector is sorted most to least
+        {
+            if(i < i + 1)
+            {
+                numsIsSorted = false;
+                break;
+            }
+        }
+    }
+    
+    return numsIsSorted;
 }
