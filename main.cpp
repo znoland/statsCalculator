@@ -29,6 +29,15 @@ int main()
         cout<<"The numbers are not sorted."<<endl;
     }
 
+    if(isSortedLuke(numbers))
+    {
+        cout<<"The numbers are sorted. [Luke]"<<endl;
+    }
+    else
+    {
+        cout<<"The numbers are not sorted. [Luke]"<<endl;
+    }
+
     return 0;
 }
 //--
