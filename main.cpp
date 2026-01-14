@@ -46,8 +46,25 @@ vector<int> getNumbers()
 //--
 int findMostFrequentNumber(vector<int> nums)
 {
-    // TODO: Student 1
-    return -1;
+    int mostFrequent = nums[0];
+    int maxCount = 0;
+
+    for (int i = 0; i < nums.size(); i++) {
+        int count = 0;
+
+        for (int j = 0; j < nums.size(); j++) {
+            if (nums[j] == nums[i]) {
+                count++;
+            }
+        }
+
+        if (count > maxCount) {
+            maxCount = count;
+            mostFrequent = nums[i];
+        }
+    }
+
+    return mostFrequent;
 }
 //--
 int numberGreaterThanAverage(vector<int> nums)
