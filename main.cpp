@@ -76,3 +76,30 @@ bool isSorted(vector<int> nums)
     // TODO: Student 4
     return false;
 }
+//--
+bool isSortedLuke(const vector<int>& nums)
+{
+    bool ascending = true;
+    bool descending = true;
+
+    // handle edge case
+    if (nums.size() <= 1)
+    {
+        return true;
+    }
+
+    // loop to check both conditions
+    // unsigned size_t to avoid comparison between signed and unsigned
+    for (size_t i = 1; i < nums.size(); i++)
+    {
+        if (nums[i - 1] > nums[i])
+        {
+            ascending = false;  // is not ascending if previous > current
+        }
+        if (nums[i - 1] < nums[i])
+        {
+            descending = false; // is not descending if previous < current
+        }
+    }
+    return ascending || descending;
+}
