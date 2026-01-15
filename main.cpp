@@ -49,15 +49,18 @@ int findMostFrequentNumber(vector<int> nums)
     int mostFrequent = nums[0];
     size_t maxCount = 0;
 
+    //Loop through each element in the vector
     for (size_t i = 0; i < nums.size(); i++) {
         size_t count = 0;
 
+        //compare nums[i] with every element
         for (size_t j = 0; j < nums.size(); j++) {
             if (nums[j] == nums[i]) {
                 count++;
             }
         }
 
+        //update mostFrequent value if a higher count is found
         if (count > maxCount) {
             maxCount = count;
             mostFrequent = nums[i];
