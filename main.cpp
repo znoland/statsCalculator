@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <unordered_set>
 using namespace std;
 
 vector<int> getNumbers();
@@ -59,6 +60,21 @@ int numberGreaterThanAverage(vector<int> nums)
 int greatestCommonDivisor(vector<int> nums)
 {
     // TODO: Student 3
+
+    //to hold unique divisors of each value in nums
+    unordered_set<int> divisors;
+
+    //traverse to get and store all possible divisors
+    for (int i = 0; i < nums.size(); i++)
+    {
+        for (int j = nums[i]; j > 0; j--)
+        {
+            if (nums[i] % j == 0)
+            {
+                divisors.insert(j);
+            }
+        }
+    }
     return 1;
 }
 //--
