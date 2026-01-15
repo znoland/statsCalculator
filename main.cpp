@@ -53,16 +53,21 @@ int findMostFrequentNumber(vector<int> nums)
 int numberGreaterThanAverage(vector<int> nums)
 {
     // TODO: Student
-    
+    //Check if the vector is empty
+    if (nums.empty())
+    {
+        cout << "Error: The list of numbers is empty." << endl;
+        return 0;
+    }
     //calculate avg
-    int average = 0;
+    double average = 0;
     for (int i = 0; i < nums.size(); ++i)
     {
         average = average + nums[i];
     }
     average = average / nums.size();
 
-    //find nums greater than the avg
+    //count nums greater than the avg
     int countGreaterThanAvg = 0;
     for (int i = 0; i < nums.size(); ++i)
     {
@@ -73,7 +78,7 @@ int numberGreaterThanAverage(vector<int> nums)
     }
 
     //return total numbers greater than the avg
-    return average;
+    return countGreaterThanAvg;
 }
 //--
 int greatestCommonDivisor(vector<int> nums)
