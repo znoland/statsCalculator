@@ -124,7 +124,35 @@ int greatestCommonDivisor(vector<int> nums)
 bool isSorted(vector<int> nums)
 {
     // TODO: Student 4
-    return false;
+    bool numsIsSorted = true;
+
+    if(nums.size() <= 1)//handles if vector is empty or only has one item
+    {
+        return false;
+    } 
+    
+    for(int i = 0; i < nums.size() - 1; i++) //checks if vector is sorted least to most
+    {
+        if(nums[i] >= nums[i + 1]) 
+        {
+            numsIsSorted = false;
+            break;
+        }
+    }
+
+    if(numsIsSorted == false)
+    {
+        for(int i = 0; i < nums.size() - 1; i++) //checks if vector is sorted most to least
+        {
+            if(nums[i] <= nums[i + 1])
+            {
+                numsIsSorted = false;
+                break;
+            }
+        }
+    }
+    
+    return numsIsSorted;
 }
 //--
 bool isSortedLuke(const vector<int>& nums)
@@ -137,7 +165,7 @@ bool isSortedLuke(const vector<int>& nums)
     {
         return true;
     }
-
+    
     // loop to check both conditions
     // unsigned size_t to avoid comparison between signed and unsigned
     for (size_t i = 1; i < nums.size(); i++)
