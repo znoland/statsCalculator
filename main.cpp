@@ -47,12 +47,12 @@ vector<int> getNumbers()
 int findMostFrequentNumber(vector<int> nums)
 {
     int mostFrequent = nums[0];
-    int maxCount = 0;
+    size_t maxCount = 0;
 
-    for (int i = 0; i < nums.size(); i++) {
-        int count = 0;
+    for (size_t i = 0; i < nums.size(); i++) {
+        size_t count = 0;
 
-        for (int j = 0; j < nums.size(); j++) {
+        for (size_t j = 0; j < nums.size(); j++) {
             if (nums[j] == nums[i]) {
                 count++;
             }
