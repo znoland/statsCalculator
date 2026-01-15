@@ -67,6 +67,11 @@ bool isSorted(vector<int> nums)
     // TODO: Student 4
     bool numsIsSorted = true;
 
+    if(nums.size() <= 1) //handles if vector is empty or only has one item
+    {
+        return true;
+    }
+
     for(int i = 0; i < nums.size() - 1; i++) //checks if vector is sorted least to most
     {
         if(i > i + 1) 
