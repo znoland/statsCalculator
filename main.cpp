@@ -64,6 +64,17 @@ int greatestCommonDivisor(vector<int> nums)
     //to hold unique divisors of each value in nums
     unordered_set<int> divisors;
 
+    //edge case if vector has 1 value or is empty
+    if (nums.size() == 1)
+    {
+        int retVal = 0;
+        retVal = nums[0];
+    }
+    else if (nums.size() == 0)
+    {
+        cout << "No numbers to work with" << endl;
+    }
+
     //traverse to get and store all possible divisors
     for (int i = 0; i < nums.size(); i++)
     {
