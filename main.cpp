@@ -7,6 +7,7 @@ int findMostFrequentNumber(vector<int> nums);
 int numberGreaterThanAverage(vector<int> nums);
 int greatestCommonDivisor(vector<int> nums);
 bool isSorted(vector<int> nums);
+bool isSortedLuke(const vector<int>& nums);
 
 int main()
 {
