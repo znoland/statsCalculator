@@ -75,7 +75,26 @@ int greatestCommonDivisor(vector<int> nums)
             }
         }
     }
-    return 1;
+    int retVal = 0;
+    //identify largest universal divisor
+    for (int num : divisors)
+    {
+        int count = 0;
+        for (int i = 0; i < nums.size(); i++)
+        {
+            //break if divisor doesn't go into the number evenly
+            if (nums[i] % num != 0)
+            {
+                count++;
+                break;
+            }
+        }
+        if (count == 0 && num > retVal)
+        {
+            retVal = num;
+        }
+    }
+    return retVal;
 }
 //--
 bool isSorted(vector<int> nums)
