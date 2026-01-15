@@ -46,6 +46,11 @@ vector<int> getNumbers()
 //--
 int findMostFrequentNumber(vector<int> nums)
 {
+    //make sure there are no issues if the vector is empty
+    if(nums.empty()){
+        return -1;
+    }
+
     int mostFrequent = nums[0];
     size_t maxCount = 0;
 
