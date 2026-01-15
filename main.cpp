@@ -55,8 +55,33 @@ vector<int> getNumbers()
 //--
 int findMostFrequentNumber(vector<int> nums)
 {
-    // TODO: Student 1
-    return -1;
+    //make sure there are no issues if the vector is empty
+    if(nums.empty()){
+        return -1;
+    }
+
+    int mostFrequent = nums[0];
+    size_t maxCount = 0;
+
+    //Loop through each element in the vector
+    for (size_t i = 0; i < nums.size(); i++) {
+        size_t count = 0;
+
+        //compare nums[i] with every element
+        for (size_t j = 0; j < nums.size(); j++) {
+            if (nums[j] == nums[i]) {
+                count++;
+            }
+        }
+
+        //update mostFrequent value if a higher count is found
+        if (count > maxCount) {
+            maxCount = count;
+            mostFrequent = nums[i];
+        }
+    }
+
+    return mostFrequent;
 }
 //--
 int numberGreaterThanAverage(vector<int> nums)
